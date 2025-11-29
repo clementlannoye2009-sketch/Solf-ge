@@ -1,20 +1,30 @@
+/* Fond général et police */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(160deg, #e0f7fa, #f1f5f9);
   margin: 0;
   padding: 0;
 }
 
-h1, h3, h4 {
+/* Titres */
+h1 {
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+h3, h4 {
   color: #1e293b;
 }
 
+/* Cases des leçons */
 .border {
   border: 1px solid #cbd5e1;
 }
 
 .rounded {
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .p-2 { padding: 8px; }
@@ -26,16 +36,29 @@ h1, h3, h4 {
 .mb-4 { margin-bottom: 16px; }
 .mb-6 { margin-bottom: 24px; }
 
-.bg-white { background-color: #fff; }
-.bg-slate-100 { background-color: #f1f5f9; }
+/* Couleurs de fond pour les cartes */
+.bg-white { 
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
 
-.hover-bg { transition: 0.2s; }
-.hover-bg:hover { background-color: #e2e8f0; }
+.hover-bg { 
+  transition: all 0.3s ease; 
+}
+.hover-bg:hover { 
+  background-color: #d0f0fd; 
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
 
+/* Curseur */
 .cursor-pointer { cursor: pointer; }
 
-.shadow-sm { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+/* Ombres */
+.shadow-sm { box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
+.shadow-md { box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
 
+/* Grille des leçons */
 .grid { display: grid; }
 .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
 .sm-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
@@ -43,4 +66,32 @@ h1, h3, h4 {
 
 .gap-3 { gap: 12px; }
 
+/* Texte préformaté */
 .whitespace-pre-line { white-space: pre-line; }
+
+/* Section Level */
+.mb-4 {
+  margin-bottom: 24px;
+  padding: 15px;
+  background-color: #fefefe;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+.mb-4:hover {
+  background-color: #f0f9ff;
+  transform: scale(1.01);
+}
+
+/* Scroll pour la note explicative si longue */
+#root > div {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Styles des leçons sélectionnées */
+.selected-lesson {
+  background-color: #d0f0fd;
+  border: 2px solid #38bdf8;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
