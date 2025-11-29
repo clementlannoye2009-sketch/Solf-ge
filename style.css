@@ -1,4 +1,4 @@
-/* Fond général et police */
+/* -------------------- Fond général et police -------------------- */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(160deg, #e0f7fa, #f1f5f9);
@@ -6,7 +6,7 @@ body {
   padding: 0;
 }
 
-/* Titres */
+/* -------------------- Titres -------------------- */
 h1 {
   color: #0f172a;
   text-align: center;
@@ -18,80 +18,84 @@ h3, h4 {
   color: #1e293b;
 }
 
-/* Cases des leçons */
-.border {
-  border: 1px solid #cbd5e1;
-}
-
-.rounded {
-  border-radius: 12px;
-}
-
-.p-2 { padding: 8px; }
-.p-3 { padding: 12px; }
-.p-6 { padding: 24px; }
-
-.m-1 { margin: 4px; }
-.mb-2 { margin-bottom: 8px; }
-.mb-4 { margin-bottom: 16px; }
-.mb-6 { margin-bottom: 24px; }
-
-/* Couleurs de fond pour les cartes */
-.bg-white { 
+/* -------------------- Niveaux -------------------- */
+.level-section {
+  margin-bottom: 24px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
   background-color: #ffffff;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
+  position: relative;
 }
 
-.hover-bg { 
-  transition: all 0.3s ease; 
+.level-section:hover {
+  transform: scale(1.01);
+  background-color: #f0f9ff;
 }
-.hover-bg:hover { 
-  background-color: #d0f0fd; 
+
+/* Bandeau coloré pour les niveaux */
+.level-section::before {
+  content: attr(data-level-title);
+  display: block;
+  font-weight: bold;
+  color: #ffffff;
+  background: #38bdf8;
+  padding: 5px 10px;
+  border-radius: 12px 12px 0 0;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* -------------------- Cases des leçons -------------------- */
+.lesson-card {
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 12px;
+  margin: 4px;
+  background-color: #ffffff;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.lesson-card:hover {
+  background-color: #d0f0fd;
   transform: translateY(-3px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Curseur */
-.cursor-pointer { cursor: pointer; }
-
-/* Ombres */
-.shadow-sm { box-shadow: 0 2px 5px rgba(0,0,0,0.08); }
-.shadow-md { box-shadow: 0 4px 15px rgba(0,0,0,0.12); }
-
-/* Grille des leçons */
-.grid { display: grid; }
-.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
-.sm-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-.lg-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-.gap-3 { gap: 12px; }
-
-/* Texte préformaté */
-.whitespace-pre-line { white-space: pre-line; }
-
-/* Section Level */
-.mb-4 {
-  margin-bottom: 24px;
-  padding: 15px;
-  background-color: #fefefe;
-  border-radius: 15px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-  transition: 0.3s ease;
-}
-.mb-4:hover {
-  background-color: #f0f9ff;
-  transform: scale(1.01);
+/* Badge pour les leçons indisponibles */
+.lesson-card.unavailable::after {
+  content: "Indisponible";
+  display: block;
+  font-size: 10px;
+  color: #ffffff;
+  background-color: #f87171;
+  padding: 2px 6px;
+  border-radius: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
 
-/* Scroll pour la note explicative si longue */
-#root > div {
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Styles des leçons sélectionnées */
+/* Leçon sélectionnée */
 .selected-lesson {
   background-color: #d0f0fd;
   border: 2px solid #38bdf8;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transform: scale(1.02);
 }
+
+/* -------------------- Grilles -------------------- */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+.sm-grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.lg-grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+.gap-3 { gap: 12px; }
+
+/* -------------------- Texte -------------------- */
+.whitespace-pre-line { white-space: pre-line; }
