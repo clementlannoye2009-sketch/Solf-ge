@@ -1,18 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Solfège Facile</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprendre le Solfège</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-slate-100">
-  <div id="root"></div>
+<body>
 
-  <script type="module" src="app.js"></script>
+    <header>
+        <h1>Apprendre le Solfège</h1>
+        <p>Site interactif pour apprendre les bases facilement</p>
+    </header>
+
+    <main>
+
+        <section class="card">
+            <h2>Les Notes de Musique</h2>
+            <p>Clique pour entendre une note :</p>
+
+            <button onclick="playNote('C')">Do</button>
+            <button onclick="playNote('D')">Ré</button>
+            <button onclick="playNote('E')">Mi</button>
+            <button onclick="playNote('F')">Fa</button>
+            <button onclick="playNote('G')">Sol</button>
+            <button onclick="playNote('A')">La</button>
+            <button onclick="playNote('B')">Si</button>
+        </section>
+
+        <section class="card">
+            <h2>Quiz rapide</h2>
+            <p id="quiz-question">Clique sur "Nouvelle Question"</p>
+
+            <button onclick="newQuestion()">Nouvelle Question</button>
+            <button onclick="checkAnswer()">Vérifier</button>
+
+            <p id="quiz-result"></p>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
